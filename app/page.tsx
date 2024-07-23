@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { ConnectButtonProvider } from '@/provider/connect-button'
 import { ChefHat } from 'lucide-react'
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
           <ChefHat className="h-4 w-4" />
           BBQ
         </Button>
+        <ConnectButtonProvider />
       </main>
     </div>
   )
