@@ -1,5 +1,5 @@
+import { ConnectButtonProvider } from '@/components/connect-button-provider'
 import { Button } from '@/components/ui/button'
-import { ConnectButtonProvider } from '@/provider/connect-button'
 import { ChefHat } from 'lucide-react'
 
 export default function Home() {

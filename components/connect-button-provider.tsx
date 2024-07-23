@@ -1,14 +1,17 @@
 'use client'
 
 import { client, wallets } from '@/lib/const'
-import { ConnectButton } from 'thirdweb/react'
+import { useTheme } from 'next-themes'
+import { ConnectButton, type ConnectButtonProps } from 'thirdweb/react'
 
 export function ConnectButtonProvider() {
+  const { theme } = useTheme()
+
   return (
     <ConnectButton
       client={client}
       wallets={wallets}
-      theme="light"
+      theme={theme as ConnectButtonProps['theme']}
       connectButton={{ label: 'Come in' }}
       connectModal={{
         size: 'compact',

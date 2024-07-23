@@ -1,3 +1,4 @@
+import { ThemeProvider } from '@/components/theme-provider'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { ThirdwebProvider } from 'thirdweb/react'
@@ -27,7 +28,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${geistSans.className}`}
       >
-        <ThirdwebProvider>{children}</ThirdwebProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          disableTransitionOnChange
+        >
+          <ThirdwebProvider>{children}</ThirdwebProvider>
+        </ThemeProvider>
       </body>
     </html>
   )
