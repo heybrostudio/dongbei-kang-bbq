@@ -18,3 +18,4 @@ An NFT marketplace DApp.
 - [ ] Add ERC721 NFT Contract interactions.
 - [ ] Add ERC1155 NFT Contract interactions.
 - [ ] Add Marketplace Contract interactions.
+- [ ] Deploy Vercel.
