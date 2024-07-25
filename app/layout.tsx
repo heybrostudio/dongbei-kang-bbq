@@ -1,4 +1,8 @@
+import { ConnectButtonProvider } from '@/components/connect-button-provider'
+import { Header } from '@/components/header'
+import { Nav } from '@/components/nav/nav'
 import { ThemeProvider } from '@/components/theme-provider'
+import { Toaster } from '@/components/ui/sonner'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { ThirdwebProvider } from 'thirdweb/react'
@@ -24,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${geistSans.className}`}
       >
@@ -33,7 +37,20 @@ export default function RootLayout({
           defaultTheme="dark"
           disableTransitionOnChange
         >
-          <ThirdwebProvider>{children}</ThirdwebProvider>
+          <ThirdwebProvider>
+            <main className="flex min-h-screen flex-col items-center">
+              <Header>
+                <div className="m-auto flex h-full max-w-5xl items-center justify-between">
+                  <Nav />
+                  <div className="hidden sm:block">
+                    <ConnectButtonProvider />
+                  </div>
+                </div>
+              </Header>
+              <div className="w-full flex-1">{children}</div>
+            </main>
+            <Toaster />
+          </ThirdwebProvider>
         </ThemeProvider>
       </body>
     </html>

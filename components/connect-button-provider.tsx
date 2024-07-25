@@ -8,21 +8,23 @@ export function ConnectButtonProvider() {
   const { theme } = useTheme()
 
   return (
-    <ConnectButton
-      client={client}
-      wallets={wallets}
-      theme={theme as ConnectButtonProps['theme']}
-      connectButton={{ label: 'Come in' }}
-      connectModal={{
-        size: 'compact',
-        title: 'Connect your wallet',
-        titleIcon: '',
-        welcomeScreen: {
-          title: 'Welcome to Dongbei Kang BBQ',
-          subtitle: "There's nothing that a BBQ can't solve.",
-        },
-        showThirdwebBranding: false,
-      }}
-    />
+    <div suppressHydrationWarning>
+      <ConnectButton
+        client={client}
+        wallets={wallets}
+        theme={theme as ConnectButtonProps['theme']}
+        connectButton={{ label: 'Come in' }}
+        connectModal={{
+          size: 'compact',
+          title: 'Connect your wallet',
+          titleIcon: '',
+          welcomeScreen: {
+            title: 'Welcome to Dongbei Kang BBQ',
+            subtitle: "There's nothing that a BBQ can't solve.",
+          },
+          showThirdwebBranding: false,
+        }}
+      />
+    </div>
   )
 }
